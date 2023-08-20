@@ -5,7 +5,7 @@ import SideBar from './SideBar'
 const NavSideWrapper = ({ children }) => {
     const handleClseSidebar = () => {
         const isopen = document.getElementById('body').className
-        if (isopen === 'sidebar-mini layout-fixed sidebar-open') {
+        if (isopen === 'sidebar-mini layout-fixed sidebar-open' || isopen === 'sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-open') {
             document.getElementById('body').className = 'sidebar-mini layout-fixed sidebar-collapse'
         }
     }
