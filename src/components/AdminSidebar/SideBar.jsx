@@ -52,7 +52,7 @@ const SideBar = () => {
                             <ul className="nav nav-treeview">
                                 {menuItem.map((menu, index) => {
                                     return (
-                                        <li className="nav-item">
+                                        <li className="nav-item" key={index}>
                                             <Link to={menu?.path} className={`nav-link ${currentPath === menu.path && 'active'}`}>
                                                 <i className="far fa-circle nav-icon"></i>
                                                 <p> {menu.name}</p>
