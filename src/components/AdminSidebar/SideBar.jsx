@@ -1,25 +1,43 @@
+import { Inbox } from '@mui/icons-material';
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import logo from '../../assets/logo/debonair_logo_dark.svg'
 
 const SideBar = () => {
 
     const location = useLocation();
     const currentPath = location.pathname;
 
+    // const navItemGroup = [
+    //     {
+    //         groupName: 'nav header', icon: <Mail />,
+    //         iconColor: 'red',
+    //         subItem: [
+    //             { itemName: 'home', path: '/home', itemIcon: <Inbox /> },
+    //             { itemName: 'about', path: '/about', itemIcon: <Inbox /> },
+    //         ]
+    //     },
+    //     {
+    //         groupName: 'nav header2', icon: <Mail />,
+    //         iconColor: 'green',
+    //         subItem: [
+    //             { itemName: 'home', path: '/home', itemIcon: <Inbox /> },
+    //             { itemName: 'about', path: '/about', itemIcon: <Inbox /> }
+    //         ]
+    //     },
+    // ]
+
     const menuItem = [
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'About', path: '/about', icon: <i className="far fa-circle nav-icon"></i> },
+        { name: 'Contact', path: '/contact', icon: <i className="far fa-circle nav-icon"></i> },
     ]
 
-    console.log(currentPath)
     return (
-        <aside className="main-sidebar sidebar-dark-primary elevation-4">
+        <aside className="main-sidebar sidebar-dark-primary ">
             {/* <!-- Brand Logo --> */}
             <Link to={'/'} className="brand-link">
-                {/* <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" className="brand-image img-circle elevation-3"
-                    style="opacity: .8" /> */}
-                <span className="brand-text font-weight-light">AdminLTE 3</span>
+                <img src={logo} height='100%' width='100%' alt="Debonair Logo" className="brand-image  elevation-3" />
+                <span className="brand-text font-weight-light ">Debonair</span>
             </Link>
 
             {/* <!-- Sidebar --> */}
@@ -29,9 +47,9 @@ const SideBar = () => {
                     <div className="image">
                         {/* <img src="dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" /> */}
                     </div>
-                    <div className="info">
+                    {/* <div className="info">
                         <a href="#" className="d-block">Alexander Pierce</a>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* <!-- Sidebar Menu --> */}
@@ -54,7 +72,8 @@ const SideBar = () => {
                                     return (
                                         <li className="nav-item" key={index}>
                                             <Link to={menu?.path} className={`nav-link ${currentPath === menu.path && 'active'}`}>
-                                                <i className="far fa-circle nav-icon"></i>
+                                                {/* <i className="far fa-circle nav-icon"></i> */}
+                                                {menu.icon}
                                                 <p> {menu.name}</p>
                                             </Link>
                                         </li>

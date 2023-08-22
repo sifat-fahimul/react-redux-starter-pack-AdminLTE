@@ -1,8 +1,5 @@
 import { Navigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import { Box } from "@mui/material";
 import NavSideWrapper from "./AdminSidebar/NavSideWrapper";
 
 

@@ -7,7 +7,6 @@ import PublicRoute from './components/PublicRoute';
 import PrivateRoute from './components/PrivateRoute';
 import useAuthCheck from './hooks/useAuthCheck';
 import { routes } from './routes/routes';
-import NotFound from './page/NotFound';
 
 
 function App() {

@@ -1,11 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar'
 import SideBar from './SideBar'
+import Footer from './Footer'
 
 const NavSideWrapper = ({ children }) => {
-    const handleClseSidebar = () => {
-        const isopen = document.getElementById('body').className
-        if (isopen === 'sidebar-mini layout-fixed sidebar-open' || isopen === 'sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-open') {
+    const handleCloseSidebar = () => {
+        const isOpen = document.getElementById('body').className
+        if (isOpen === 'sidebar-mini layout-fixed sidebar-open' || isOpen === 'sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-open') {
             document.getElementById('body').className = 'sidebar-mini layout-fixed sidebar-collapse'
         }
     }
@@ -13,9 +14,10 @@ const NavSideWrapper = ({ children }) => {
         <>
             <Navbar />
             <SideBar />
-            <div className="content-wrapper" onClick={handleClseSidebar}>
+            <div className="content-wrapper" onClick={handleCloseSidebar}>
                 {children}
             </div>
+            <Footer />
         </>
 
     )
